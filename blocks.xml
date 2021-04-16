@@ -1,0 +1,125 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="s4d_login" id="4$P0-!mHk%VWv%u#)@nJ" x="279" y="55">
+    <value name="TOKEN">
+      <block type="text" id="Ox?}_5TY8a-VAI.sa!%]">
+        <field name="TEXT">Botun Tokeni</field>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_on_message" id="/t8!TGs6-;R/%!$3tfnS" x="279" y="124">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="4=kf9E^#a/E~h9|7y$dO">
+        <value name="IF0">
+          <block type="logic_compare" id="}Au/:g~O!E%Ia^Mv$};!">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="KZ7Y(!JFm=$d4x*,SDZL"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="y`YXw2h/vYIntwx$!zA~">
+                <field name="TEXT">!kayıt</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_set_data" id="gCae,ik}Sih#0[Aule$n">
+            <value name="KEY">
+              <shadow type="text" id="(xWbmB2(Jm]]Vm~QfNuE">
+                <field name="TEXT">hello</field>
+              </shadow>
+              <block type="s4d_message_author_raw" id="{|_6.wy]^[[FZe@8Av?D">
+                <field name="SEARCH_TYPE">USERNAME</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <shadow type="text" id="Yy^,#zPlB%`ws#wOsX=^">
+                <field name="TEXT">Kayıtlı</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="s4d_add_reaction" id="Q9d5,=lyr*;#VWwcvTuN">
+                <value name="REACTION">
+                  <shadow type="text" id="[IXEsV:sQEpoSjCf}:nG">
+                    <field name="TEXT">👍</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="s4d_reply" id="jOnVQYGmg;9U=._7yseD">
+                    <value name="CONTENT">
+                      <shadow type="text" id="/gz^v(Oa_k9:k:H=Hr[/">
+                        <field name="TEXT">Kaydedildi!</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="XXYUR6H](htQ[RVk8.ue">
+            <value name="IF0">
+              <block type="logic_compare" id="eKH@2[cu${6$Dc@C+khc">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_content" id="-}P3pU~oR;{7iwxa~-qE"></block>
+                </value>
+                <value name="B">
+                  <block type="text" id="I{YGIfb(ywLfJ+vY!hJq">
+                    <field name="TEXT">!kayıtlımıyım</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="controls_if" id="-9E^l=/^%CMZQeOZm,Y|">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="E!t!5yiCAwe)c){{Xac0">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="s4d_get_data" id="%m7%(v[^RJw2dOj)b$,y">
+                        <value name="KEY">
+                          <shadow type="text" id="cg~}#I9}R)QdBP@Ou9vn">
+                            <field name="TEXT">hello</field>
+                          </shadow>
+                          <block type="s4d_message_author_raw" id="kqKSG{{l*Vq$Q#/fe@se">
+                            <field name="SEARCH_TYPE">USERNAME</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="text" id="=U.sC2-5@%V@*Sg)JY(o">
+                        <field name="TEXT">Kayıtlı</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="s4d_add_reaction" id="WDKQv%uIE#nq8Z_H%1cm">
+                    <value name="REACTION">
+                      <shadow type="text" id="$l(AJ0c-clqGVt*V_Uyq">
+                        <field name="TEXT">✔</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="s4d_add_reaction" id="c1[}UCbP`p8Sd(M=~:z~">
+                    <value name="REACTION">
+                      <shadow type="text" id="IbMcs(MlL!:~{al.?XWd">
+                        <field name="TEXT">❌</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
